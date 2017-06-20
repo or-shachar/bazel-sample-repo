@@ -15,7 +15,17 @@ java_library(
 java_test(
     name = "jetty_test",
     size = "small",
+    tags = ["block-network"],
     test_class = "com.example.JettyRunnerTest",
     srcs = ["JettyRunnerTest.java"],
+    deps = [":jetty","@junit//jar"],
+)
+
+java_test(
+    name = "jetty_test2",
+    size = "small",
+    tags = ["block-network"],
+    test_class = "com.example.JettyRunnerTest2",
+    srcs = ["JettyRunnerTest2.java"],
     deps = [":jetty","@junit//jar"],
 )
