@@ -1,0 +1,1 @@
+--host_jvm_args=-Dbazel.DigestFunction=SHA1
