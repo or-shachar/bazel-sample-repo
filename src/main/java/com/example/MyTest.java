@@ -8,6 +8,8 @@ public class MyTest {
 
     @Test
     public void test() {
-            throw new RuntimeException("please fail");
+        System.out.println(System.getProperty("java.vendor"));
+        System.out.println(System.getProperty("java.version"));
+        throw new RuntimeException("please fail");
     }
 }
