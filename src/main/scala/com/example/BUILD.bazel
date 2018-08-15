@@ -1,0 +1,28 @@
+load("@io_bazel_rules_scala//scala:scala.bzl", "scala_library", "scala_binary", "scala_test", "scala_specs2_junit_test")
+
+scala_library(
+    name = "jetty",
+    srcs = ["JettyRunner.scala"],
+    deps = [
+        "@jetty_continuation//jar",
+        "@jetty_http//jar",
+        "@jetty_io//jar",
+        "@jetty_server//jar",
+        "@jetty_util//jar",
+        "@servlet_api//jar",
+    ],
+)
+
+scala_specs2_junit_test(
+    name = "test",
+    size = "small",
+    srcs = ["JettyRunnerTest.scala"],
+    print_discovered_classes = True,
+    suffixes = ["Test"],
+    deps = [
+        ":jetty",
+        "@jetty_server//jar",
+        "@scalaj_http//jar",
+        "@servlet_api//jar"
+    ],
+)
