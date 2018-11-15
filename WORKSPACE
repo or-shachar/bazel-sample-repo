@@ -1,5 +1,5 @@
 
-rules_scala_version="e7e7cbcd800c53f92159dbc157ec991ee8e31cfe" # update this as needed
+rules_scala_version="4be50865a332aef46c46c94b345c320c3353e9e1" # update this as needed
 
 http_archive(
              name = "io_bazel_rules_scala",

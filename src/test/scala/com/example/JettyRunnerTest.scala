@@ -52,9 +52,9 @@ class JettyRunnerTest extends SpecificationWithJUnit with AfterAll with BeforeAl
       response(s"http://localhost:$port") must beSuccessfulTry(HttpResponse(200,myMessage))
     }
 
-    "fail" in {
+    "ignore" in {
       response(s"http://localhost:$port") must beSuccessfulTry(HttpResponse(200,"not-my-message"))
-    }
+    }.pendingUntilFixed("I am skipped!")
   }
 
 
