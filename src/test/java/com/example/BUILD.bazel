@@ -1,0 +1,7 @@
+java_test(
+    name = "javatest",
+    size = "small",
+    test_class = "com.example.MySimpleTest",
+    srcs = ["MySimpleTest.java"],
+    deps = ["@junit//jar"],
+)
