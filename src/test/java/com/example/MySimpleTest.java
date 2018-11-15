@@ -12,7 +12,8 @@ public class MySimpleTest {
     	System.out.println("I am a happy test");
     } 
 
-    @Ignore
+    @Test
+    @Ignore("not ready yet")
     public void skippedTest() throws RuntimeException{
         throw new RuntimeException("Just skip me please");
     } 
