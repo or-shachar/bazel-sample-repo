@@ -1,5 +1,6 @@
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-rules_scala_version="4be50865a332aef46c46c94b345c320c3353e9e1" # update this as needed
+rules_scala_version="633bc57f2c165957a13d51bae8cf47638c42b024" # update this as needed
 
 http_archive(
              name = "io_bazel_rules_scala",
