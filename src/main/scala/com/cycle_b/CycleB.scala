@@ -1,3 +1,5 @@
 package com.cycle_b
 
-case class CycleB()
+import com.cycle_a.CycleA
+
+case class CycleB(cyclea: CycleA)
