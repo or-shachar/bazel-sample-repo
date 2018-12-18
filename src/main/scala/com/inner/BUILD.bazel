@@ -1,0 +1,10 @@
+package(default_visibility = ["//visibility:public"])
+
+load("@io_bazel_rules_scala//scala:scala.bzl", "scala_library", "scala_binary", "scala_test", "scala_specs2_junit_test")
+
+scala_library(
+    name = "lib3",
+    srcs = [
+        "with_no_build_file/NoBuildFile.scala"
+    ]
+)
