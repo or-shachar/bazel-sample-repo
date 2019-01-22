@@ -1,0 +1,6 @@
+java_library(
+        name = "resources",
+        resources = native.glob(["**"],exclude=["BUILD"]),
+        resource_strip_prefix = "%s/" % native.package_name(),
+        visibility = ["//visibility:public"]
+    )

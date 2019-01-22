@@ -4,4 +4,5 @@ java_test(
     test_class = "com.example.MySimpleTest",
     srcs = ["MySimpleTest.java"],
     deps = ["@junit//jar"],
+    runtime_deps = ["//src/test/resources:resources"],
 )
