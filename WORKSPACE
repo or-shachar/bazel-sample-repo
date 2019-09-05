@@ -7,7 +7,8 @@ http_archive(
              name = "io_bazel_rules_scala",
              url = "https://github.com/bazelbuild/rules_scala/archive/%s.zip"%rules_scala_version,
              type = "zip",
-             strip_prefix= "rules_scala-%s" % rules_scala_version
+             strip_prefix= "rules_scala-%s" % rules_scala_version,
+             sha256 = "51de3f646f2a1bfc0147883cf9748d708478ab631c5508d26bcae38c133fdfb4",
              )
 
 load("@io_bazel_rules_scala//scala:scala.bzl", "scala_repositories")
@@ -37,7 +38,6 @@ http_archive(
     name = "com_google_protobuf",
     url = "https://github.com/protocolbuffers/protobuf/archive/%s.tar.gz" % protobuf_version,
     strip_prefix = "protobuf-%s" % protobuf_version,
-    sha256 = protobuf_version_sha256,
 )
 
 maven_jar(
