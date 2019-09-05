@@ -1,4 +1,4 @@
-## Issue Overview
+## Issue Overview 
 
 **What happened**:<br/>
 Intellij runner is not properly populated with VM options which results in a `Failed to find a deployable jar when building ...` error.<br/>
