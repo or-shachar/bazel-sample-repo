@@ -10,9 +10,8 @@ Runner should get populated with required deployables and application should run
 
 **How to reproduce it (as minimally and precisely as possible)**:<br/>
 1. Import repo as a Bazel project
-2. Setup runner configuration as follows:
-<br/>
-![intellij-runner-config](assets/intellij-runner-config.png)
+2. Setup runner configuration as follows - 
+![runner-config](assets/runner-config.png)
 
 **Anything else need to know?**:<br/>
 None.
