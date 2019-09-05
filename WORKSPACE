@@ -1,5 +1,7 @@
 
-rules_scala_version="4be50865a332aef46c46c94b345c320c3353e9e1" # update this as needed
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+rules_scala_version="f1e689c2426c1522d7c8ca69ac8cbc1a714b6d02" # update this as needed
 
 http_archive(
              name = "io_bazel_rules_scala",
@@ -15,6 +17,28 @@ specs2_junit_repositories()
 load("@io_bazel_rules_scala//scala:toolchains.bzl", "scala_register_toolchains")
 scala_register_toolchains()
 
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
+
+maybe(
+    http_archive,
+    name = "bazel_skylib",
+    url = "https://github.com/bazelbuild/bazel-skylib/releases/download/0.9.0/bazel_skylib-0.9.0.tar.gz",
+    sha256 = "1dde365491125a3db70731e25658dfdd3bc5dbdfd11b840b3e987ecf043c7ca0",
+)
+
+load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
+bazel_skylib_workspace()
+
+
+protobuf_version="655310ca192a6e3a050e0ca0b7084a2968072260"
+
+http_archive(
+    name = "com_google_protobuf",
+    url = "https://github.com/protocolbuffers/protobuf/archive/%s.tar.gz" % protobuf_version,
+    strip_prefix = "protobuf-%s" % protobuf_version,
+    sha256 = protobuf_version_sha256,
+)
 
 maven_jar(
     name="junit",
