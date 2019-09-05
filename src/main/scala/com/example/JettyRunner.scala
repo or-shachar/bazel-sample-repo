@@ -4,6 +4,12 @@ import javax.servlet.http.{HttpServletRequest, HttpServletResponse}
 import org.eclipse.jetty.server.{Request, Server}
 import org.eclipse.jetty.server.handler.AbstractHandler
 
+object FailedRunner extends App {
+  def main(): Unit = {
+    print("Something went wrong...")
+  }
+}
+
 class MyServer(port: Int, message: String) {
   val server = new Server(port)
   server.setHandler(new JettyRunner(message))
