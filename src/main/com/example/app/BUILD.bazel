@@ -1,0 +1,20 @@
+load("@io_bazel_rules_scala//scala:scala.bzl", "scala_library", "scala_binary", "scala_test")
+package(default_visibility = ["//visibility:public"])
+
+scala_library(
+    name = "app",
+    srcs = glob(["*.scala"]),
+    deps = [
+        "//src/main/com/example/api",
+        "//src/main/com/example/core",
+        "@maven//:org_apache_logging_log4j_log4j_api",
+        "@maven//:org_apache_logging_log4j_log4j_core",
+    ],
+)
+
+java_binary(
+    name = "app_runner",
+    runtime_deps = [":app"],
+    main_class = "com.example.app.WalkerApp"
+)
+
