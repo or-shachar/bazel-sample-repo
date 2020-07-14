@@ -7,5 +7,5 @@ To run builds using RBE and Results on this repo please run:
 bazel --bazelrc=.bazelrc.remote test -k //... \
     --config=remote --config=results \
     --remote_instance_name=<your-project> \
-    --project_id=gcb-with-custom-workers
+    --project_id=<gcp-project>
 ```
