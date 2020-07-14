@@ -15,3 +15,4 @@ load("//setup:external_jvm.bzl","external_jvm")
 external_jvm()
 load("@maven//:defs.bzl", "pinned_maven_install")
 pinned_maven_install()
+

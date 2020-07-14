@@ -8,4 +8,6 @@ class Logger(name: String){
 	def print(d:Dog): Unit ={
 		logger.info(d)
 	}
+
+	def fail()
 }

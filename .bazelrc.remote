@@ -62,3 +62,11 @@ build:remote --remote_timeout=3600
 # account credential instead.
 build:remote --google_default_credentials=true
 
+build:remote --remote_download_minimal
+
+
+# Set flags for uploading to BES in order to view results in the Bazel Build
+# Results UI.
+build:results --bes_backend=grpcs://buildeventservice.googleapis.com
+build:results --bes_timeout=10s
+build:results --bes_results_url=https://source.cloud.google.com/results/invocations/

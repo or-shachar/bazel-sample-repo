@@ -1,0 +1,22 @@
+load("@io_bazel_rules_scala//scala:scala.bzl", "scala_library", "scala_binary", "scala_specs2_junit_test")
+
+scala_specs2_junit_test(
+  name = "app_test_runner",
+  tags = ["UT"],
+  size = "small",
+  prefixes = ["Test"],
+  suffixes = ["Test"],
+  runtime_deps = [":app"],
+  tests_from = [":app"],
+)
+
+scala_library(
+  name = "app",
+  srcs = glob(["*.scala"]),
+  deps = [
+      "//external:io_bazel_rules_scala/dependency/junit/junit",
+      "//external:io_bazel_rules_scala/dependency/specs2/specs2",
+      "//external:io_bazel_rules_scala/dependency/specs2/specs2_junit",
+      "//src/main/com/example/app"
+  ],
+)
